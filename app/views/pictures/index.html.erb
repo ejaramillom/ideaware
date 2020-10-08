@@ -20,10 +20,11 @@
           <% @pictures.each do |picture| %>
           <tr>
             <td>
-              <%= link_to pictures_path( picture ), method: :add do %>
-              <i class="fas fa-caret-down bigIcon"></i>
+              <%= link_to pictures_path( picture ), method: :create do %>
+                <i class="fas fa-caret-down bigIcon"></i>
               <% end %>
-              <p class="">Nombre <%= picture.id %> </p>
+              <p class="">Nombre: <%= picture.description %> </p>
+              <img src="<%= picture.links.self %>" alt="<%= picture.description %>">
             </td>
           </tr>
           <% end %>

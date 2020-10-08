@@ -1,4 +1,3 @@
-
 class Picture < ApplicationRecord
   # belongs_to :type
   # belongs_to :category

@@ -4,7 +4,7 @@ git_source(:github) { |repo| "http://github.com/#{repo}.git" }
 ruby '2.5.5'
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'bootstrap-sass', '~> 3.4.1'
-# gem 'faker', git: 'https://github.com/faker-ruby/faker.git', branch: 'master'
+gem 'bootstrap', '~> 4.1'
 gem 'jbuilder', '~> 2.7'
 gem 'puma', '~> 4.1'
 gem 'rails', '~> 6.0.2', '>= 6.0.2.1'
@@ -17,7 +17,6 @@ gem 'jquery-rails'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails'
 gem 'by_star', git: "git://github.com/radar/by_star"
-# gem 'chartkick'
 gem 'groupdate', '~> 5.0'
 gem 'unsplash'
 

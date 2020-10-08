@@ -24,31 +24,32 @@ class PicturesController < ApplicationController
 
   end
 
-  def add
+  def create
     @picture = Picture.new
 
-    respond_to do |format|
-      format.js
-      format.html
-    end
+    # respond_to do |format|
+    #   format.js
+    #   format.html
+    # end
 
+  end
+
+  def destroy
+    @picture = Picture.find(params[:id])
+    @picture.destroy
+
+    redirect_to pictures_path
   end
 
   def favorites
     @picture = Picture.all
   end
+end
 
-  def remove
-    @picture = Picture.create(picture_params)
-    if @picture.save
-      redirect_to pictures_path, notice: "Foto guardada exitosamente"
-    end
-
-    respond_to do |format|
-      format.js
-      format.html
-    end
-  end
+  # def destroy
+  #   picture = Picture.find(params[:id])
+  #   picture.destroy
+  # end
 
   # def show
   #   @picture = Picture.find(params[:id])
@@ -64,21 +65,12 @@ class PicturesController < ApplicationController
   #
   #   redirect_to pictures_path
   # end
-
-  def destroy
-    @picture = Picture.find(params[:id])
-    @picture.destroy
-
-    redirect_to pictures_path
-  end
-
-  def picture_params
-    params.require( :picture ).permit( :value, :concept, :picture_date, :type_id,  :category_id )
-  end
+  # def picture_params
+  #   params.require( :picture ).permit( :value, :concept, :picture_date, :type_id,  :category_id )
+  # end
 
   # def months_list
   #   (1..12).map do |m|
   #     m.months.ago
   #   end
   # end
-end
