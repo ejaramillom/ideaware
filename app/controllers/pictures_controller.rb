@@ -4,8 +4,7 @@ class PicturesController < ApplicationController
   # require 'active_support/time'
 
   def index
-    @tab = :pictures
-    @pictures = Picture.by_month( @picture_date ).order("picture_date DESC")
+    @pictures = Picture.all
 
     # type_id = params[ :type_id ] unless params[ :type_id ] == ''
     # category_id = params[ :category_id ] unless params[ :category_id ] == ''
@@ -37,6 +36,10 @@ class PicturesController < ApplicationController
 
   end
 
+  def favorites
+    @picture = Picture.all
+  end
+
   def remove
     @picture = Picture.create(picture_params)
     if @picture.save
@@ -49,9 +52,9 @@ class PicturesController < ApplicationController
     end
   end
 
-  def show
-    @picture = Picture.find(params[:id])
-  end
+  # def show
+  #   @picture = Picture.find(params[:id])
+  # end
 
   # def edit
   #   @picture = Picture.find(params[:id])
