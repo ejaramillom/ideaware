@@ -6,7 +6,7 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%# <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %> %>
+     <%# <% <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
@@ -24,7 +24,7 @@
 
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
-            <li class="<%= 'active' if @tab == :favorites %>"><%= link_to "favoritos", root_path %></li>
+            <li class="<%= 'active' if @tab == :favorites %>"><%= link_to "Favoritas", favorites_path %></li>
             <li class="<%= 'active' if @tab == :pictures %>"><%= link_to "Fotos", pictures_path %></li>
           </ul>
         </div>

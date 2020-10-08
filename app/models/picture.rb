@@ -3,22 +3,12 @@ class Picture < ApplicationRecord
   # belongs_to :type
   # belongs_to :category
   # by_star_field :picture_date
-  Unsplash.configure do |config|
-    config.application_access_key = "Wc_sw7h2IsJOA11q7w7ZXq4iF9LYa2d5YVZ9jtP9QH4"
-    config.application_secret = "PEOevnCJYav4bdQUEJMvCOktpVNNhEAasEHYkYe0At0"
-    config.application_redirect_uri = "https://your-application.com/oauth/callback"
-    config.utm_source = "alices_terrific_client_app"
-
-    # optional:
-    # config.logger = MyCustomLogger.new
-  end
-
-  # base_uri ''
+    # base_uri ''
 
 # access key: Wc_sw7h2IsJOA11q7w7ZXq4iF9LYa2d5YVZ9jtP9QH4
 # secret key: PEOevnCJYav4bdQUEJMvCOktpVNNhEAasEHYkYe0At0
 # redirect permisions: urn:ietf:wg:oauth:2.0:oob
-  # 
+  #
   # scope :select_type, ->( type ) { Picture.where( 'type = ?', type )}
   # scope :select_favorite, ->( favorite ) { Picture.where( 'favorite = ?', true )}
 

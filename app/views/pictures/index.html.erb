@@ -17,26 +17,23 @@
         <div class="panel-body">
           <div id="pictures-chart" style="height: 250px;">
 
-            <!-- colocar aqui la lista de fotos de la API -->
+          <% @pictures.each do |picture| %>
+          <tr>
+            <td>
+              <%= link_to pictures_path( picture ), method: :add do %>
+              <i class="fas fa-caret-down bigIcon"></i>
+              <% end %>
+              <p class="">Nombre <%= picture.id %> </p>
+            </td>
+          </tr>
+          <% end %>
+
           </div>
         </div>
       </div>
     </div>
-    <!-- <div class="box col-md-6">
-      <div class="panel panel-default">
-        <div class="panel-heading">Por Día</div>
-        <div class="panel-body">
-          <div id="daily-pictures-chart" style="height: 250px;">
-            <!-- Colocar aqui la lista de favoritos -->
-          <!-- </div> -->
-        <!-- </div> -->
-      <!-- </div> -->
-    <!-- </div> --> -->
+
   </div>
 </div>
 
 <%= yield %>
-
-<!-- <script>
-  new filterView();
-</script> -->

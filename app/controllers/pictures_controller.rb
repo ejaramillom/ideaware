@@ -1,10 +1,8 @@
 # frozen_string_literal: true
 class PicturesController < ApplicationController
-  # before_action :months_list
-  # require 'active_support/time'
-
   def index
-    @pictures = Picture.all
+    @pictures = Unsplash::Photo.all
+    # @photo = Unsplash::Photo.all
 
     # type_id = params[ :type_id ] unless params[ :type_id ] == ''
     # category_id = params[ :category_id ] unless params[ :category_id ] == ''
