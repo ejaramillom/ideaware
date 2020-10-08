@@ -1,0 +1,21 @@
+<tr>
+  <td class="picture_date" data-id='<%= picture.id %>'>
+    <div class="day"><%= picture.picture_date.day %></div>
+    <div class="month"><%= picture.picture_date.strftime("%b") %></div>
+  </td>
+  <td>
+    <div>
+      <span class="type"><%= picture.type.name  %></span>
+    </div>
+    <div>
+      <span class="concept"><%= picture.concept %></span>
+    </div>
+  </td>
+  <td class="category text-right"><%= picture.category.name %></td>
+  <td class="text-right" style="width: 170px;">
+    <div class="amount"><%= picture.value %></div>
+    <div class="actions">
+      <%= link_to "<span class='glyphicon glyphicon-edit'></span> edit".html_safe, edit_picture_path( picture.id ), remote: true %>
+      <%= link_to "<span class='glyphicon glyphicon-trash'></span> delete".html_safe, picture_path( picture.id ),:data => { :confirm => "Estas seguro?", :method => 'delete', remote: true } %>
+  </td>
+</tr>
