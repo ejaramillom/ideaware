@@ -1,10 +1,20 @@
 <div class="container">
+  <div class="row">
+    <div class="total-box col-md-3">
+      <span>Lista de fotos</span>
+      <button type="button" class="btn btn-secondary"><%= link_to "Fotos", pictures_path , class: "text-white" %> </button>
+    </div>
+    <div class="total-box col-md-3">
+      <span>Favoritas</span>
+      <button type="button" class="btn btn-secondary"><%= link_to "Favoritas", favorites_path , class: "text-white" %> </button>
+    </div>
+  </div>
   <div class="row" style="margin-top: 40px;">
     <div class="box col-md-6">
       <div class="panel panel-default">
-        <div class="panel-heading">Lista de fotos</div>
+        <div class="panel-heading"><h3>Lista de favoritas</h3></div>
         <div class="panel-body">
-          <div id="pictures-chart" style="height: 250px;">
+          <div id="pictures-chart"">
 
             <% @pictures.each do |picture| %>
             <tr>
@@ -19,8 +29,3 @@
     </div>
   </div>
 </div>
-
-
-<!-- <script>
-  new filterView();
-</script> -->

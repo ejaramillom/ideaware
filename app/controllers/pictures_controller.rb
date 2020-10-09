@@ -82,5 +82,5 @@ end
 
   private
   def picture_params
-    params.permit( :description, :url, :favorite_id )
+    params.permit( :description, :url )
   end

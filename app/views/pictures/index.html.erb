@@ -2,41 +2,37 @@
   <div class="row">
     <div class="total-box col-md-3">
       <span>Lista de fotos</span>
-      <button type="button" class="btn btn-primary"><%= link_to "Fotos", pictures_path , class: "text-white" %> </button>
+      <button type="button" class="btn btn-secondary"><%= link_to "Fotos", pictures_path , class: "text-white" %> </button>
     </div>
     <div class="total-box col-md-3">
       <span>Favoritas</span>
-      <button type="button" class="btn btn-primary"><%= link_to "Favoritas", favorites_path , class: "text-white" %> </button>
+      <button type="button" class="btn btn-secondary"><%= link_to "Favoritas", favorites_path , class: "text-white" %> </button>
     </div>
   </div>
 
   <div class="row" style="margin-top: 40px;">
     <div class="box col-md-6">
       <div class="panel panel-default">
-        <div class="panel-heading">Lista de fotos</div>
+        <div class="panel-heading"><h3>Lista de fotos</h3></div>
         <div class="panel-body">
           <div id="pictures-chart">
 
           <% @pictures.each do |picture| %>
-          <tr>
-            <td>
-              <%= link_to pictures_path( picture ), method: :create do %>
-              <%= hidden_field_tag( :description, picture.description) %>
+            <p>Nombre: <%= picture.description %> </p>
+            <img src=<%= picture.links.self %> alt=<%= picture.description %>>
+            <%= form_tag pictures_path, method: :create do %>
+              <%= hidden_field_tag( :description, picture.description ) %>
               <%= hidden_field_tag( :url, picture.links.url) %>
               <%= hidden_field_tag( :favorite_id, picture.id) %>
-                <i class="fas fa-caret-down bigIcon"></i>
-              <% end %>
-              <p class="">Nombre: <%= picture.description %> </p>
-              <img src="<%= picture.links.self %>" alt="<%= picture.description %>">
-            </td>
-          </tr>
+              <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+              <%= submit_tag "Guardar", class: "btn btn-primary btn-md" %>
+            <% end %>
           <% end %>
 
           </div>
         </div>
       </div>
     </div>
-
   </div>
 </div>
 
