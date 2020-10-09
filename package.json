@@ -1,5 +1,11 @@
 {
   "devDependencies": {
-    "webpack-dev-server": "^3.11.0"
+    "webpack-dev-server": "^4.0.0"
   }
+  "name": "ideaware",
+  "author": "Emmanuel Jaramillo M",
+  "email": "ejaramilo@hotmail.com",
+  "license": "MIT",
+  "version": "0.0.1",
+  "private": true,
 }
