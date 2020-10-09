@@ -10,7 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_30_163936) do
+ActiveRecord::Schema.define(version: 2020_10_10_163936) do
 
+  create_table "favorites", force: :cascade do |t|
+    t.string "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
+  create_table "pictures", force: :cascade do |t|
+    t.integer "description"
+    t.string "url"
+    t.integer "favorite_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["favorite_id"], name: "index_pictures_on_favorite_id"
+  end
+
+  add_foreign_key "pictures", "favorites"
 end
