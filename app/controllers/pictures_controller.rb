@@ -25,7 +25,12 @@ class PicturesController < ApplicationController
   end
 
   def create
-    @picture = Picture.new
+    @picture = Picture.new(picture_params)
+    if @picture.save
+      puts "Picture succesfully saved"
+    else
+      puts "Couldn't save picture"
+    end
 
     # respond_to do |format|
     #   format.js
@@ -35,14 +40,14 @@ class PicturesController < ApplicationController
   end
 
   def destroy
-    @picture = Picture.find(params[:id])
+    @picture = Picture.find(params[ :id ])
     @picture.destroy
 
     redirect_to pictures_path
   end
 
   def favorites
-    @picture = Picture.all
+    @pictures = Picture.all
   end
 end
 
@@ -74,3 +79,8 @@ end
   #     m.months.ago
   #   end
   # end
+
+  private
+  def picture_params
+    params.permit( :description, :url, :favorite_id )
+  end

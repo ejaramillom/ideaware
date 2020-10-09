@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 2020_10_10_163936) do
   create_table "pictures", force: :cascade do |t|
     t.integer "description"
     t.string "url"
-    t.integer "favorite_id", null: false
+    t.integer "favorite_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["favorite_id"], name: "index_pictures_on_favorite_id"

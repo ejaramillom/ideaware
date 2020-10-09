@@ -21,6 +21,9 @@
           <tr>
             <td>
               <%= link_to pictures_path( picture ), method: :create do %>
+              <%= hidden_field_tag( :description, picture.description) %>
+              <%= hidden_field_tag( :url, picture.links.url) %>
+              <%= hidden_field_tag( :favorite_id, picture.id) %>
                 <i class="fas fa-caret-down bigIcon"></i>
               <% end %>
               <p class="">Nombre: <%= picture.description %> </p>

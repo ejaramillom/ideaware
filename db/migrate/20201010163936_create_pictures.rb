@@ -5,7 +5,7 @@ class CreatePictures < ActiveRecord::Migration[6.0]
     create_table :pictures do |t|
       t.integer :description
       t.string :url
-      t.references :favorite, null: false, foreign_key: true
+      t.references :favorite, foreign_key: true
 
       t.timestamps
     end

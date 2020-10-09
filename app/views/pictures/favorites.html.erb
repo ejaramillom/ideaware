@@ -6,7 +6,13 @@
         <div class="panel-body">
           <div id="pictures-chart" style="height: 250px;">
 
-            <!-- colocar aqui la lista de fotos de la API -->
+            <% @pictures.each do |picture| %>
+            <tr>
+              <td>
+              <p class="">Nombre: <%= picture.description %> </p>
+              </td>
+            </tr>
+            <% end %>
           </div>
         </div>
       </div>
